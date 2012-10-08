@@ -1,0 +1,21 @@
+{
+    "name": "starfish-prime/php-skeleton",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.6",
+        "phake/phake": "v1.0.3"
+    },
+    "authors": [
+        {
+            "name": "James Carr",
+            "email": "james.r.carr@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+      "psr-0":{
+        "Game": "./src"
+      }
+    }
+}
