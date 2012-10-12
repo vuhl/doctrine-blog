@@ -34,6 +34,10 @@ C:\Projects\php-tdd-exercise> gem install guard-phpunit
 
 ```
 
+Run the following command to create the database
 
+```bash
 
+vendor/bin/doctrine orm:schema-tool:create
 
+```

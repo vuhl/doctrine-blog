@@ -2,25 +2,25 @@
 
 namespace VUHL\Blog\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
+/**
+ * @Entity @Table(name="author")
+ **/
 class Author 
 {
     /**
-     * @ORM\Id
-     * @ORM\Column(type="integer");
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Id
+     * @Column(type="integer");
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
-
     /**
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Post",mappedBy="author", cascade={"persist"})
+     * @OneToMany(targetEntity="Post", mappedBy="author", cascade={"persist"})
      */
     private $posts;
 

@@ -1,35 +1,38 @@
 <?php
-namespace VUHL\Blog\Entity;
 
+namespace VUHL\Blog\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @Entity @Table(name="posts")
+ **/
 class Post 
 {
     /**
-     * @ORM\Id
-     * @ORM\Column(type="integer");
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Id
+     * @Column(type="integer");
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     private $title;
 
     /**
-     * @ORM\Column(type="text")
+     * @Column(type="text")
      */
     private $body;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Author", inverseBy="posts")
+     * @ManyToOne(targetEntity="Author", inversedBy="posts")
      */
     private $author;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @Column(type="datetime")
      */
     private $date;
 

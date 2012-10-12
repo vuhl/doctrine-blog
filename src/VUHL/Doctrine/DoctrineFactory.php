@@ -15,7 +15,7 @@ class DoctrineFactory{
 
 		$this->conn = array(
 		    'driver' => 'pdo_sqlite',
-		    'path' => __DIR__ . '../../db.sqlite',
+		    'path' => __DIR__ . '../../../../db.sqlite',
 		);
 
 	}
