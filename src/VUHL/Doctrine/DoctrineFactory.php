@@ -11,7 +11,9 @@ class DoctrineFactory{
 
 	public function __construct(){
 		$isDevMode = true;
-		$this->config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/../Blog/Entity"), $isDevMode);
+        $this->config = Setup::createAnnotationMetadataConfiguration(
+            array(__DIR__."/../Blog/Entity"), 
+            $isDevMode);
 
 		$this->conn = array(
 		    'driver' => 'pdo_sqlite',

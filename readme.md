@@ -5,7 +5,15 @@ Awesome stuff be coming
 ## Setup
 * Install [composer](http://getcomposer)
 * From the project root: ``composer install --dev`
-* Run ``php ./vendor/bin/phpunit.php -c test/phpunit.xml``
+* Run ``php ./vendor/bin/phpunit.php -c test/phpunit.xml`` to run the
+tests
+* copy setyp/doctrine.localhost.blog to your apache configuration and replace
+{YOUR DOC ROOT} with wherever you cloned this project to. Restart
+apache.
+* 
+* navigate to http://doctrine.localhost.blog
+
+
 
 ### Linux Instructions
 

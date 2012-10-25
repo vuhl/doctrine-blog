@@ -2,7 +2,7 @@
 include(__DIR__ . '/partials/header.php'); 
 ?>
 <div class="container">
-    <form>
+    <form method="post">
       <legend>New Post</legend>
       <p>The world awaits your words of wisdom with a baited breath. 
         Quick! Before it's too late! Post something for them all to hear!</p>

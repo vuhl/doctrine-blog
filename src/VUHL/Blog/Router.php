@@ -1,7 +1,7 @@
 <?php
 namespace VUHL\Blog;
 
-use VUHL\Blog\Entity\Blog;
+use VUHL\Blog\Entity\Post;
 use VUHL\Blog\Entity\Author;
 use VUHL\Doctrine\DoctrineFactory;
 
@@ -34,7 +34,7 @@ class Router
             $post->title  = $request['title'];
             $post->body   = $request['body'];
             $post->author = $this->author;
-            $post->date   = new \DateTime("now", new DateTimezone("america/chicago"));
+            $post->date   = new \DateTime("now", new \DateTimezone("america/chicago"));
             $this->em->persist($post);
             $this->em->flush();
             header('Location: /');
@@ -56,7 +56,7 @@ class Router
         }
     }
 
-    private function getAuthorCount($author)
+    private function getAuthorCount()
     {
         $query = $this->em->createQuery('SELECT COUNT(a.id) FROM VUHL\Blog\Entity\Author a');
         return $query->getSingleScalarResult();
