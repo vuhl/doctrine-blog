@@ -1,0 +1,23 @@
+<VirtualHost doctrine.localhost.blog:80>
+	ServerAdmin webmaster@localhost
+
+	DocumentRoot {YOUR DOC ROOT}doctrine-blog/web
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride None
+	</Directory>
+	<Directory {YOUR DOC ROOT}/doctrine-blog/web>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ErrorLog {YOUR DOC ROOT}/doctrine-blog/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog {YOUR DOC ROOT}/doctrine-blog/access.log combined
+</VirtualHost>
