@@ -24,6 +24,12 @@ include(__DIR__ . '/partials/header.php');
                     <div class="body">
                         <?php echo $post->body; ?>
                     </div>
+                    <div class="tags">
+                        <?php foreach($post->tags as $tag): ?>
+                            <span class="label label-info"><?php echo $tag->getName(); ?></span>
+                        <?php endforeach; ?>
+                    </p>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>

@@ -10,7 +10,9 @@ include(__DIR__ . '/partials/header.php');
       <input type="text" placeholder="Catchy Title…" style="width:80%" name="title">
       <label>Content</label>
       <textarea rows="3" style="width:80%" placeholder="Awesome content for the win!" name="body"></textarea>
-
+    
+      <label>Tags</label>
+      <input type="text" placeholder="some,tags,separated,by,commas" style="width:80%" name="tags">
       <div class="control-group">
         <div class="controls">
           <button type="submit" class="btn">Submit</button>

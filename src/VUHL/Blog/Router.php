@@ -3,10 +3,12 @@ namespace VUHL\Blog;
 
 use VUHL\Blog\Entity\Post;
 use VUHL\Blog\Entity\Author;
+use VUHL\Blog\Entity\Tag;
 use VUHL\Doctrine\DoctrineFactory;
 
 class Router 
 {
+    const COMMA = ',';
     private $templateDir;
     private $em;
     private $author;
@@ -34,6 +36,11 @@ class Router
             $post->title  = $request['title'];
             $post->body   = $request['body'];
             $post->author = $this->author;
+            foreach(explode(self::COMMA, $request['tags']) as $tagName) {
+                $tag = new Tag();
+                $tag->setName($tagName);
+                $post->addTag($tag);
+            }
             $post->date   = new \DateTime("now", new \DateTimezone("america/chicago"));
             $this->em->persist($post);
             $this->em->flush();

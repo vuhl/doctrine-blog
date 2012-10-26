@@ -3,7 +3,7 @@
 namespace VUHL\Blog\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @Entity @Table(name="posts")
  **/
@@ -36,6 +36,15 @@ class Post
      */
     private $date;
 
+    /**
+     * @ManyToMany(targetEntity="Tag", cascade={"persist"})
+     */
+    private $tags;
+
+    public function __construct(){
+        $this->tags = new ArrayCollection();
+    }
+
     public function __set($name, $value)
     {
         $this->$name = $value;
@@ -44,5 +53,10 @@ class Post
     public function __get($name) 
     {
         return $this->$name;
+    }
+
+    public function addTag($tag) 
+    {
+        $this->tags->add($tag);
     }
 }
