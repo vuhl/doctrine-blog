@@ -1,6 +1,6 @@
 vendor
 composer.lock
-db.sqlitedb.sqlite
+db.sqlite
 error.log
 access.log
 error.log
