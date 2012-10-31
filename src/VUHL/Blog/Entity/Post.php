@@ -5,7 +5,8 @@ namespace VUHL\Blog\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 /**
- * @Entity @Table(name="posts")
+ * @Entity(repositoryClass="VUHL\Blog\Repository\PostRepository")
+ * @Table(name="posts")
  **/
 class Post 
 {
@@ -58,5 +59,7 @@ class Post
     public function addTag($tag) 
     {
         $this->tags->add($tag);
+        $tag->addPost($this);
+
     }
 }

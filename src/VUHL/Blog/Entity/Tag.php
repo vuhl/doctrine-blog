@@ -1,6 +1,7 @@
 <?php
 
 namespace VUHL\Blog\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 
 
 /**
@@ -25,6 +26,10 @@ class Tag
      */
     private $posts;
 
+    public function __construct()
+    {
+        $this->posts = new ArrayCollection();
+    }
     /**
      * Gets the value of post
      *
@@ -34,7 +39,11 @@ class Tag
     {
         return $this->posts;
     }
-    
+
+    public function addPost($post)
+    {
+        $this->posts->add($post);
+    }
     /**
      * Sets the value of post
      *
